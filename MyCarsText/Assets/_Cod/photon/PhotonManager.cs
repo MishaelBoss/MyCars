@@ -24,16 +24,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     [SerializeField] Transform content;
 
     private GameObject player;
-    [SerializeField] GameObject player_pref;
 
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.ConnectToRegion(region);
-
-        if (SceneManager.GetActiveScene().name == "Game") {
-            player = PhotonNetwork.Instantiate(player_pref.name, Vector3.zero, Quaternion.identity);
-        }
     }
 
     public override void OnConnectedToMaster()
@@ -92,6 +87,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game");
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.Destroy(player.gameObject);
+        PhotonNetwork.LoadLevel("MainMenu");
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

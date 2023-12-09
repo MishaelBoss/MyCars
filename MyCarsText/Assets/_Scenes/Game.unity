@@ -14328,6 +14328,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2033327848}
+        m_TargetAssemblyTypeName: PhotonManager, Assembly-CSharp
+        m_MethodName: OnLeftRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625275860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16152,27 +16164,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 304.2789
+      value: 304.27893
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75.22
+      value: 75.21997
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16204,11 +16216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1767.9055
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 502.39
+      value: -58
       objectReference: {fileID: 0}
     - target: {fileID: 5637496883397198934, guid: 9323a617fe4b59340a7f4f0ddcecb980, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19410,7 +19422,6 @@ MonoBehaviour:
   ErroorPanel: {fileID: 0}
   itemPrefab: {fileID: 0}
   content: {fileID: 0}
-  player_pref: {fileID: 642287924342879162, guid: ad77bdb9d9e025a4e852e1567c27a19f, type: 3}
 --- !u!1 &2036360471
 GameObject:
   m_ObjectHideFlags: 0
