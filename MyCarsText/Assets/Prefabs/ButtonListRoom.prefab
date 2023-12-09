@@ -305,5 +305,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7bc8691708c87489fd952f1882ce8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textName: {fileID: 0}
-  textPlayerCount: {fileID: 0}
+  textName: {fileID: 7982896602658129644}
+  textPlayerCount: {fileID: 2861175645344129017}

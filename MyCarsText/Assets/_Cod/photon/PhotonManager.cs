@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
@@ -22,17 +23,24 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     [SerializeField] ListItem itemPrefab;
     [SerializeField] Transform content;
 
+    private GameObject player;
+    [SerializeField] GameObject player_pref;
+
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.ConnectToRegion(region);
+
+        if (SceneManager.GetActiveScene().name == "Game") {
+            player = PhotonNetwork.Instantiate(player_pref.name, Vector3.zero, Quaternion.identity);
+        }
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Вы подключены к:" + PhotonNetwork.CloudRegion);
 
-        if (!PhotonNetwork.InLobby) ;
+        if (!PhotonNetwork.InLobby)
         {
             PhotonNetwork.JoinLobby();
             ToConnectPhoton.gameObject.SetActive(false);
@@ -53,9 +61,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         if (InputFieldNameRoom.text.Length > 3)
         {
             RoomOptions roomOptions = new RoomOptions();
-            roomOptions.MaxPlayers = 50;
+            roomOptions.MaxPlayers = 10;
             PhotonNetwork.CreateRoom(InputFieldNameRoom.text, roomOptions, TypedLobby.Default);
-            PhotonNetwork.LoadLevel("Game");
         }
         else ErroorPanel.SetActive(true);
     }
