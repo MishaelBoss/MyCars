@@ -2801,6 +2801,7 @@ MonoBehaviour:
   ErroorPanel: {fileID: 826194724}
   itemPrefab: {fileID: 3014469903811735593, guid: af63096a1a8d76242a4c61297e634d78, type: 3}
   content: {fileID: 1179880969}
+  _textRoom: {fileID: 0}
 --- !u!1 &653473612
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,10 +5690,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 762770408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.060000002, y: 0.8878519}
-  m_AnchorMax: {x: 0.64652085, y: 0.95100003}
-  m_AnchoredPosition: {x: 0.46002197, y: 0.000030517578}
-  m_SizeDelta: {x: 0.9200134, y: 0}
+  m_AnchorMin: {x: 0.060000002, y: 0.8934073}
+  m_AnchorMax: {x: 0.64752084, y: 0.95100003}
+  m_AnchoredPosition: {x: -0.539978, y: -2.9999695}
+  m_SizeDelta: {x: -1.0799866, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493791795
 MonoBehaviour:
@@ -5806,7 +5807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: V 1.2
+  m_Text: V 1.3
 --- !u!222 &1508629508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6820,7 +6821,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598970401}
         m_TargetAssemblyTypeName: PhotonManager, Assembly-CSharp
-        m_MethodName: JoinRandomRoom
+        m_MethodName: JoinRandRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

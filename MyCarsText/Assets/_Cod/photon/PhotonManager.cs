@@ -4,6 +4,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
@@ -22,8 +23,13 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     [Header("PanelJoinRoom")]
     [SerializeField] ListItem itemPrefab;
     [SerializeField] Transform content;
+    List<RoomInfo> allRoomsInfo = new List<RoomInfo>();
 
+    [Header("Player")]
     private GameObject player;
+
+    [Header("TextNameRoom")]
+    [SerializeField] Text _textRoom;
 
     void Start()
     {
@@ -67,6 +73,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Комната была создана" + PhotonNetwork.CurrentRoom.Name);
     }
 
+    /*public override void OnJoinedLobby()
+    {
+        _textRoom.text = "Имя комнаты: " + InputFieldNameRoom.text;
+    }*/
+
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.Log("Не удалось создать комнату");
@@ -89,18 +100,32 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("Game");
     }
 
-    public override void OnLeftRoom()
-    {
-        PhotonNetwork.Destroy(player.gameObject);
-        PhotonNetwork.LoadLevel("MainMenu");
-    }
-
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         foreach(RoomInfo info in roomList){
+            for (int i = 0; i < allRoomsInfo.Count; i++) {
+                if (allRoomsInfo[i].masterClientId == info.masterClientId)
+                    return;
+            }
             ListItem listItem = Instantiate(itemPrefab, content);
-            if (listItem != null)
+            if (listItem != null) {
                 listItem.SetInfo(info);
+                allRoomsInfo.Add(info);
+            }
         }
+    }
+
+    public void JoinRandRoom() {
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public void LiveButtonRoom() { 
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnLeftRoom()
+    {
+        //PhotonNetwork.Destroy(player.gameObject);
+        PhotonNetwork.LoadLevel("MainMenu");
     }
 }
