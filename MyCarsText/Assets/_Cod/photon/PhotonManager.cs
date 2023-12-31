@@ -35,7 +35,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.ConnectToRegion(region);
-    }
+    } 
 
     public override void OnConnectedToMaster()
     {
